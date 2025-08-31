@@ -4,10 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Talk with Alice Android</title>
-  <script type="module" src="https://unpkg.com/@elevenlabs/convai-widget/embed.js"></script>
+
+  <!-- Correct ElevenLabs loader -->
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
   <style>
-    html,body{height:100%}
-    body{
+    html, body { height:100% }
+    body {
       margin:0;
       display:grid;
       place-items:center;
@@ -16,11 +19,11 @@
       font-family:system-ui,Inter,Segoe UI,Roboto,Arial,sans-serif;
       padding:2rem;
     }
-    main{max-width:760px;width:100%}
-    h1{margin:0 0 .5rem}
-    p{opacity:.85;margin:.25rem 0 1.25rem}
-    elevenlabs-convai{width:100%}
-    footer{opacity:.6;margin-top:1.25rem;font-size:.9rem}
+    main { max-width:760px; width:100% }
+    h1 { margin:0 0 .5rem }
+    p { opacity:.85; margin:.25rem 0 1.25rem }
+    elevenlabs-convai { width:100% }
+    footer { opacity:.6; margin-top:1.25rem; font-size:.9rem }
   </style>
 </head>
 <body>
@@ -29,6 +32,9 @@
     <p>Click below to talk with my AI companion.</p>
 
     <!-- Your agent widget -->
-    <elevenlabs-convai agent-id="agent_2001k4o28mexefvv557kz1ec4xag"></elevenlabs-convai>
+    <elevenlabs-convai agent-id="agent_2001k40z8mexefvv557kz1ec4xag"></elevenlabs-convai>
 
-    <footer>Tip: Allow microphone
+    <footer>Tip: Allow microphone when prompted</footer>
+  </main>
+</body>
+</html>
