@@ -1,0 +1,23 @@
+{
+  "id": "mirrorfields_intro",
+  "text": "The Mirrorfields hum. 🜻 is a faint burn in the basalt. The air feels like a held breath.",
+  "choices": [
+    {
+      "id": "touch_spark",
+      "label": "Touch the burned sigil 🜻.",
+      "target": "spark_contact",
+      "effects": { "pulsewheel.set": "Warm Red", "flags.set": { "touchedSpark": true } }
+    },
+    {
+      "id": "listen",
+      "label": "Call out and listen to the fields.",
+      "target": "echo_listen",
+      "effects": { "pulsewheel.set": "Lavender" }
+    }
+  ],
+  "wait": {
+    "target": "witness_shift",
+    "effects": { "redThread.inc": 1, "sigils.set": { "witnessKnot": true } },
+    "timeoutSeconds": 15
+  }
+}
