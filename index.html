@@ -36,5 +36,12 @@
 
     <footer>Tip: Allow microphone when prompted</footer>
   </main>
+<script type="module">
+  import { getState, setState } from "./engine/gameState.js";
+
+  // for now, just test loading the default state
+  const s = getState("demo");
+  console.log("Eidra state loaded:", s);
+</script>
 </body>
 </html>
