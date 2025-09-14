@@ -37,11 +37,16 @@
     <footer>Tip: Allow microphone when prompted</footer>
   </main>
 <script type="module">
-  import { getState, setState } from "./engine/gameState.js";
+  import { eidra } from "./engine/engine.js";
 
-  // for now, just test loading the default state
-  const s = getState("demo");
-  console.log("Eidra state loaded:", s);
+  const sessionId = "demo";
+
+  // load the first scene and print it in the console
+  const out = await eidra.load_scene({ sessionId, sceneId: "mirrorfields_intro" });
+  console.log("SCENE:", out.scene.id);
+  console.log("TEXT:", out.scene.text);
+  console.log("CHOICES:", out.scene.choices.map(c => c.label));
 </script>
+
 </body>
 </html>
