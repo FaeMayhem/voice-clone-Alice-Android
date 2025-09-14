@@ -38,29 +38,8 @@
     <div id="eidra-out" style="margin-top:1rem; padding:.75rem; border:1px solid #ccc; border-radius:.5rem;"></div>
 
   </main>
-<script type="module">
-  const box = document.getElementById('eidra-out');
-  box.textContent = 'Eidra test: script tag is running'; // proves the script executes
+<script type="module" src="./app/eidra-test.js"></script>
 
-  // Import the engine (path matters!)
-  import { eidra } from "./engine/engine.js";
-
-  const sessionId = "demo";
-
-  try {
-    const out = await eidra.load_scene({ sessionId, sceneId: "mirrorfields_intro" });
-    // Show results on the page (not just console)
-    box.innerHTML = `
-      <b>Scene:</b> ${out.scene.id}<br>
-      <b>Text:</b> ${out.scene.text}<br>
-      <b>Choices:</b> <ul>${out.scene.choices.map(c=>`<li>${c.label}</li>`).join('')}</ul>
-    `;
-    console.log("SCENE:", out.scene.id, out.scene);
-  } catch (err) {
-    box.innerHTML = `<b>Error:</b> ${String(err)}`;
-    console.error(err);
-  }
-</script>
 
 
 </body>
