@@ -39,16 +39,29 @@
 
   </main>
 <script type="module">
+  const box = document.getElementById('eidra-out');
+  box.textContent = 'Eidra test: script tag is running'; // proves the script executes
+
+  // Import the engine (path matters!)
   import { eidra } from "./engine/engine.js";
 
   const sessionId = "demo";
 
-  // load the first scene and print it in the console
-  const out = await eidra.load_scene({ sessionId, sceneId: "mirrorfields_intro" });
-  console.log("SCENE:", out.scene.id);
-  console.log("TEXT:", out.scene.text);
-  console.log("CHOICES:", out.scene.choices.map(c => c.label));
+  try {
+    const out = await eidra.load_scene({ sessionId, sceneId: "mirrorfields_intro" });
+    // Show results on the page (not just console)
+    box.innerHTML = `
+      <b>Scene:</b> ${out.scene.id}<br>
+      <b>Text:</b> ${out.scene.text}<br>
+      <b>Choices:</b> <ul>${out.scene.choices.map(c=>`<li>${c.label}</li>`).join('')}</ul>
+    `;
+    console.log("SCENE:", out.scene.id, out.scene);
+  } catch (err) {
+    box.innerHTML = `<b>Error:</b> ${String(err)}`;
+    console.error(err);
+  }
 </script>
+
 
 </body>
 </html>
